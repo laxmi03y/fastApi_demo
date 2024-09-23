@@ -13,7 +13,6 @@ router = APIRouter()
 def index():
     return {"message": "Hello, welcome to the ToDo API!"}
 
-
 @router.post("/todos/", response_model=schemas.ToDoResponse)
 def create_todo(todo: schemas.ToDoCreate, db: Session = Depends(get_db)):
     return crud.create_todo(db, todo)
