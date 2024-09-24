@@ -18,4 +18,5 @@ class User(Base):
     username = Column(String(255), unique=True, index=True)
     email = Column(String(255), unique=True, index=True)
     hashed_password = Column(String(512))
+    reference_token = Column(String(512), index=True)
 
